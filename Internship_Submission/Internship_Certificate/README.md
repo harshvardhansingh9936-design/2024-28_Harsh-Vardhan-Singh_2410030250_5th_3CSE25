@@ -1,17 +1,9 @@
-# 🏆 Internship Completion Certificate
+# Internship Certificate
 
-## Junior Web Developer — E-Governance & Digital Services
-
-**Organization:** YuvaIntern  
-**Student:** Harshvardhan Singh  
+**YuvaIntern**  
 **Role:** Junior Web Developer — E-Governance & Digital Services  
+**Student:** Harsh Vardhan Singh  
 **Certificate No.:** YI/2026/184736/410723  
-**Issued:** 04 September 2026
+**Issue Date:** 04 September 2026
 
-This folder is reserved for the **official YuvaIntern internship completion certificate** corresponding to this Web Developer internship.
-
-### Expected final file
-
-`YuvaIntern_Junior_Web_Developer_Internship_Completion_Certificate.pdf`
-
-> **Important:** Keep this certificate separate from the user's Junior Data Analyst internship documents.
+The internship completion certificate is provided in this folder.
