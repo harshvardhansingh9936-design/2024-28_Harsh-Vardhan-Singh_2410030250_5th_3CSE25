@@ -1,169 +1,225 @@
-# Financial Data Analysis Internship — Junior Data Analyst
+# 💻 Junior Web Developer — E-Governance & Digital Services
 
 ## Internship Submission
 
-**Student:** Harsh Vardhan Singh  
-**Roll No.:** 2410030250  
-**Session:** 2024–28  
-**Semester:** 5th  
-**Section:** 3CSE25  
-**Organization:** YuvaIntern  
-**Role / Designation:** Junior Data Analyst  
-**Internship Period:** 07 August 2026 – 04 September 2026
+| Detail | Information |
+|---|---|
+| **Student** | Harsh Vardhan Singh |
+| **Roll No.** | 2410030250 |
+| **Session** | 2024–28 |
+| **Semester** | 5th |
+| **Section** | 3CSE25 |
+| **Organization** | YuvaIntern |
+| **Role / Designation** | Junior Web Developer — E-Governance & Digital Services |
+| **Certificate No.** | YI/2026/184736/410723 |
+| **Certificate Issue Date** | 04 September 2026 |
+
+> **This repository is exclusively for the Junior Web Developer internship.** The separate Junior Data Analyst internship is not part of this submission repository.
 
 ---
 
-## Project Title
+## 🌐 Project
 
-### Historical AAPL Market Data Analysis & Predictive Modeling
+### JanSeva Digital Service Platform (JSDSP)
+**Responsive Citizen Service Portal Prototype**
 
-A practical financial data analytics project using Apple Inc. (AAPL) historical daily market data. The work demonstrates a complete data-analysis workflow covering acquisition, validation, cleaning, feature engineering, exploratory analysis, visualization, and predictive modeling.
+The internship work centers on the **JanSeva Digital Service Platform**, a citizen-facing e-governance concept designed to help residents discover services, understand eligibility, sign in, submit applications and documents, track application status, receive notifications, and raise grievances.
 
-> **Scope:** This repository is exclusively for the **Junior Data Analyst internship** submission. It does not include or represent the separate Junior Web Developer internship.
-
----
-
-## Project Overview
-
-The project follows a four-week analytical workflow built around the same AAPL dataset:
-
-| Week | Focus | Key Work |
-|---|---|---|
-| **Week 1** | Planning & Data Acquisition | Defined analytical questions, data sources, workflow, quality controls, and reproducibility plan; acquired AAPL historical data using `yfinance`. |
-| **Week 2** | Data Wrangling & Processing | Parsed and validated the market data, checked missing/duplicate/invalid records, engineered financial features, and implemented IQR/Z-score outlier flags. |
-| **Week 3** | EDA & Visualization | Performed descriptive and distributional analysis, examined returns, volatility and volume, produced six analytical visualizations, and interpreted statistical outliers. |
-| **Week 4** | Predictive Modeling | Built chronological train/test predictive models for next-day closing price and next-day return; compared model performance with a naive persistence baseline. |
+The Week 2 implementation turns the planning work into a concrete, navigable responsive front-end prototype.
 
 ---
 
-## Dataset
+## 🎯 Project Objective
 
-- **Security:** Apple Inc. (AAPL), Nasdaq
-- **Data type:** Daily historical OHLCV market data
-- **Analysis period:** 02 January 2020 – 31 December 2024
-- **Market variables:** Open, High, Low, Close, Volume
-- **Processed records:** 1,258 dated market records
-- **Primary acquisition workflow:** Yahoo Finance data through Python's `yfinance` library
+The main objective was to translate an e-governance service concept into a clear, accessible and responsive web experience.
 
-The raw dataset is preserved separately from the processed dataset to support reproducibility and transparent data-quality decisions.
-
----
-
-## Analytical Workflow
+The prototype focuses on one complete representative journey:
 
 ```text
-Data Acquisition
-       ↓
-Data Validation & Quality Checks
-       ↓
-Cleaning & Structuring
-       ↓
-Feature Engineering
-       ↓
-Exploratory Data Analysis
-       ↓
-Visualization & Interpretation
-       ↓
-Predictive Modeling
-       ↓
-Performance Evaluation
-       ↓
-Documentation & Reproducibility
+Discover Service
+      ↓
+Understand Eligibility
+      ↓
+Sign In
+      ↓
+Start Application
+      ↓
+Enter Details
+      ↓
+Attach Documents
+      ↓
+Review
+      ↓
+Submit
+      ↓
+Track Status
+      ↓
+Receive Updates
+      ↓
+Get Help / Raise Grievance
 ```
 
-### Key engineered features
-
-- Daily return
-- Log return
-- Intraday range percentage
-- Volume change percentage
-- 20-day rolling volatility
-- Short moving averages (SMA)
-- Return-based outlier flags using IQR and Z-score methods
+The representative service used in the prototype is an **Income Certificate**. Service rules, fees, documents and processing details shown in the prototype are illustrative demonstration content, not actual government policy.
 
 ---
 
-## Week 3 — Key Findings
+## 🧩 What Was Designed
 
-The exploratory analysis found that:
+The prototype covers ten major citizen/service screens:
 
-- AAPL's closing price increased from approximately **$72.27 to $248.62** across the analysis period.
-- Mean daily return was approximately **+0.12%**, with a standard deviation of approximately **1.99%**.
-- **52 trading days** were flagged as statistical return outliers, with **55.8% occurring in 2020**.
-- Trading volume showed a **moderate positive relationship** with the absolute size of daily price movements (**Pearson r ≈ 0.55**).
+- Home
+- Service Catalogue
+- Service Details
+- Login
+- Application Form
+- Review
+- Submission Confirmation
+- Application Status
+- Help / Notifications
+- Optional Officer Dashboard
 
-These results are descriptive and are not intended as investment advice or a trading recommendation.
-
----
-
-## Week 4 — Predictive Modeling
-
-The final stage tested whether same-day market information could meaningfully predict the next trading day's outcome.
-
-### Primary target
-
-**Next-day closing price** using a chronological 80/20 train/test split without shuffling.
-
-### Models evaluated
-
-1. Naive persistence baseline — tomorrow's close approximated by today's close
-2. Single-feature linear regression using Close
-3. Multivariate linear regression using engineered market features
-4. Secondary linear regression for next-day Daily Return
-
-### Headline test results
-
-| Model | Test R² | Test RMSE |
-|---|---:|---:|
-| Naive persistence baseline | **0.9873** | **$2.87** |
-| Close-only linear regression | 0.9871 | $2.89 |
-| Multivariate linear regression | 0.9868 | $2.93 |
-| Next-day return regression | -0.0567 | 0.0145 |
-
-The high price-level R² values should not be interpreted as strong forecasting skill because AAPL prices are highly persistent over adjacent trading days. The naive baseline slightly outperformed the trained price models. The negative test R² for next-day returns provides a more demanding test and indicates weak out-of-sample predictive power for the selected linear features.
+The design translates the planned citizen journey into reusable interface patterns such as search, service cards, form fields, upload controls, progress indicators, timelines, alerts and dashboard components.
 
 ---
 
-## Tools & Technologies
+## 📱 Responsive Design
 
-- **Python**
-- **Pandas** — data loading, cleaning and transformation
-- **NumPy** — numerical computation
-- **Matplotlib** — visualization
-- **Scikit-learn** — regression and model evaluation
-- **Jupyter Notebook** — interactive analysis and documentation
-- **yfinance** — financial market data acquisition
-- **Git & GitHub** — version control and project organization
+The interface follows a **mobile-first responsive approach**.
 
----
+Key responsive behaviours include:
 
-## Submission Documents
+- Desktop navigation collapsing into a mobile menu.
+- Service/category grids adapting from multi-column layouts to smaller tablet and single-column mobile layouts.
+- Forms becoming single-column on smaller screens.
+- Flexible layouts using relative sizing, Flexbox and Grid patterns.
+- Clear touch-friendly controls and readable content across screen sizes.
 
-The college submission repository is intended to contain the following required documents:
-
-- 📄 **Internship Report**
-- 📊 **Internship Presentation (PPT)**
-- 🏆 **Junior Data Analyst Internship Certificate**
-
-Additional project notebooks, source code, datasets, figures, and supporting reports may be included when required for technical evidence.
+The report documents responsive behaviour across desktop, tablet and mobile reference widths.
 
 ---
 
-## Reproducibility
+## ♿ Accessibility & Usability
 
-The analysis was designed so that the workflow can be inspected and reproduced from the documented notebooks and Python scripts. Raw data is kept separate from processed data, transformation decisions are documented, and chronological splitting is used for predictive modeling to reduce temporal leakage risk.
+Accessibility was treated as a core design requirement rather than a final-stage addition.
+
+The prototype emphasizes:
+
+- Clear field labels
+- Visible focus states
+- Descriptive buttons and actions
+- Plain-language content
+- Logical information hierarchy
+- Mobile-friendly form layouts
+- Clear application progress and status communication
+
+The project uses **WCAG 2.2 AA** as the accessibility target described in the internship work.
 
 ---
 
-## Important Note
+## 🛠️ Technologies
 
-This project is an **academic/internship data-analysis project**. Historical market analysis and model results should not be interpreted as financial advice, investment recommendations, or guarantees of future performance.
+### Prototype implementation
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- Responsive **Flexbox / Grid**
+- Local mock/static data
+
+### Planned production direction
+
+The internship report identifies a future production direction compatible with **React + TypeScript + responsive CSS**, while the submitted Week 2 prototype remains self-contained HTML5/CSS3/JavaScript so it can be reviewed without a build environment.
 
 ---
 
-## Author
+## 🏗️ Implementation Approach
+
+The prototype was intentionally kept self-contained and honest about its scope.
+
+It does **not** claim to provide:
+
+- A real government backend
+- A live government identity provider
+- A real payment gateway
+- A production database
+- Live government APIs
+
+Instead, these areas are represented through mock/static data where needed for demonstration.
+
+---
+
+## 📋 Key Design Decisions
+
+### Service discovery
+A prominent search experience and service cards help users find relevant services quickly.
+
+### Eligibility before application
+Eligibility and document information appear before the main Apply action so users can understand requirements before starting a form.
+
+### Step-based forms
+Long forms are divided into manageable steps with visible progress.
+
+### Timeline-based status
+Application status is represented as a timeline so users can see completed work and what remains.
+
+### Mobile-first forms
+Smaller screens use single-column forms to improve readability and input accuracy.
+
+### Plain language
+Content avoids unnecessary technical or legal phrasing so the interface remains understandable to non-technical users.
+
+---
+
+## 📄 Internship Documentation
+
+The repository is organized around the college's required internship-submission materials:
+
+```text
+📁 Internship_Submission/
+│
+├── 📄 Internship_Report/
+├── 📊 Internship_PPT/
+└── 🏆 Internship_Certificate/
+```
+
+Additional supporting project material can be added alongside these files when required.
+
+---
+
+## 🏆 Certificate
+
+The internship certificate confirms successful completion of an internship with **YuvaIntern** in the role of:
+
+**Junior Web Developer — E-Governance & Digital Services**
+
+Certificate Number: **YI/2026/184736/410723**  
+Date of Issue: **04 September 2026**
+
+---
+
+## 📚 Internship Work Highlights
+
+### Week 1 — Planning & Requirements
+Established the JanSeva platform direction, requirements, personas, citizen journey, architecture direction, roadmap, risks and testing/acceptance approach.
+
+### Week 2 — Responsive Web Prototype
+Converted the planning into a responsive front-end prototype with wireframes, high-fidelity mockups, user flows, responsive behaviour, accessibility considerations, testing notes and design rationale.
+
+---
+
+## ⚠️ Scope Note
+
+This repository documents an **internship/academic prototype for e-governance service design**. Demonstration service details are illustrative and should not be interpreted as official government rules, eligibility criteria, fees or processing commitments.
+
+---
+
+## 👨‍💻 Author
 
 **Harsh Vardhan Singh**  
 B.Tech — Computer Science Engineering  
 IILM University, Greater Noida  
-Session 2024–28
+Session **2024–28**
+
+---
+
+⭐ **Junior Web Developer Internship | E-Governance & Digital Services | YuvaIntern**
